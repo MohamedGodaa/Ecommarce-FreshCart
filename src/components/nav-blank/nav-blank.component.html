@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-md bg-main-light fixed-top">
+        <div class="container">
+        <img src="./assets/images/freshcart-logo.svg" alt="" class="navbar-brand ms-auto" srcset="">
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="shadow rounded-3" routerLink="home">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="shadow rounded-3" routerLink="cart">cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="shadow rounded-3" routerLink="wishlist">wish list</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="shadow rounded-3" routerLink="products">products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="shadow rounded-3" routerLink="categories">categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="shadow rounded-3" routerLink="brands">brands</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center">
+            <li class="nav-item mt-2" routerLink="cart">
+                <button class="btn position-relative border-0">
+                    <i class="fa-solid fa-cart-shopping  fa-xl"></i>
+                    <span class="position-absolute cart-icon end-25 translate-middle badge rounded-2 bg-main">{{cartNum}}</span>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="btn border-0" (click)="onToggle()">
+                    <i class="fa-solid fa-circle-half-stroke fa-xl"></i>
+                </button>
+            </li>
+            <li class="nav-item">
+                <a (click)="signOut()" class="nav-link cursor-pointer">SignOut</a>
+            </li>
+            </ul>
+        
+    </div>
+</div>
+</nav>

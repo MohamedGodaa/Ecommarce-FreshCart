@@ -1,0 +1,16 @@
+.cart-icon{
+    top: 15%;
+}
+
+nav{
+    font-size: 14px;
+}
+@media (max-width: 575.98px) {
+
+    nav img{
+        margin-right: auto;
+    }
+    li a {
+        padding-left: 10px;
+    }
+}

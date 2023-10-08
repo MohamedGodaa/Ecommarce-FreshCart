@@ -1,0 +1,17 @@
+<section class="mt-5 shadow p-5">
+    <h2>totoal Number Orders <span>{{totalOrders.length}}</span></h2>
+    <div class="row border-bottom align-items-center my-3" *ngFor="let order of totalOrders">
+        <div class="col-md-8">
+            <h3>{{order.totalOrderPrice | currency:'EGY'}}</h3>
+            <h5>shippingAddress:</h5>
+            <p>Address:{{order.shippingAddress.details}}</p>
+            <p>city:{{order.shippingAddress.city}}</p>
+            <p>phone:{{order.shippingAddress.phone}}</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Number of Products in Order:<span>{{order.cartItems.length}}</span></h4>
+            <p>createdAt:{{order.createdAt | date}}</p>
+            <p>paidAt:{{order.paidAt | date }}</p>
+        </div>
+    </div>
+</section>

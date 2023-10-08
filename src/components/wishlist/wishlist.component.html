@@ -1,0 +1,24 @@
+<section class="shadow mt-3 p-3">
+    <h3>
+        My wish List
+    </h3>
+    <div class="row border-bottom p-3 my-3" *ngFor="let item of wishList">
+        <div class="col-md-2">
+            <img class="w-100" [src]="item.imageCover" [alt]="item.title">
+        </div>
+        <div class="col-md-10 d-flex justify-content-between align-items-center">
+            <div>
+                <h4>{{ item.title }}</h4>
+                <p class="m-0 p-0">{{ item.price | currency:'EGY' }}</p>
+                <button (click)="removeWish(item._id)" class="btn m-0 p-0 btn-sm" style="color: red;">
+                    <i class="fa-solid fa-trash-can fa-sm"></i>Revmove
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-outline-success" (click)="addCart(item._id)">
+                    +add To Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+$main-color: #0aad0a;
+$light-color: #f0f3f2;
+$shadow: rgba(145, 158, 171, 0.337) 0px 5px 4px -1px,
+    rgba(145, 158, 171, 0.418) 0px 4px 5px 1px,
+    rgba(145, 158, 171, 0.38) 0px 1px 10px 1px;
+$font-family: "Encode Sans Expanded", sans-serif;
+$rating-color: #ffc908;
+$main-transition: 0.8s;
+
+.main-font {
+  font-family: $font-family;
+}
+.rating-color {
+    color: $rating-color;
+}
+.link-active {
+  background-color: $main-color;
+  border-radius: 8px;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.font-sm {
+    font-size: 14px;
+}
+
+.text-main {
+  color: $main-color;
+}
+
+.text-main-light {
+  color: $light-color;
+}
+
+.bg-main {
+  background-color: $main-color !important;
+}
+
+.bg-main-light {
+  background-color: $light-color !important;
+}
+
+.main-btn {
+  border: unset;
+  cursor: pointer;
+  color: #fff !important;
+  background-color: $main-color !important;
+  padding: 4px 8px;
+  transition: background-color $main-transition;
+  border-radius: 5px;
+}
+
+.main-btn:hover {
+  background-color: #08e208;
+}
+
+.main-btn:disabled {
+  background-color: #067a0663 !important;
+  color: #ffffff8e !important;
+  cursor: not-allowed;
+}
+
+.product {
+  &:hover {
+    box-shadow: $shadow;
+    border: solid 1px var(--main-color);
+
+    .add-btn {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  .add-btn {
+    transition: transform 1s, opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+body.light-mode {
+  background-color: #fff;
+  color: #2d3436;
+}
+
+body.dark-mode {
+  background-color: #2d3436;
+  color: #dfe6e9;
+}
+
+
+

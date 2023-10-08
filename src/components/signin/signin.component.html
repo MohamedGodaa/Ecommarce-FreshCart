@@ -1,0 +1,77 @@
+<section class="w-75 p-3 mx-auto">
+    <div class="form-item shadow p-3">
+        <h1>
+            Register Now:
+        </h1>
+        <form (ngSubmit)="handelSignin()" [formGroup]="signinForm" class=" p-3">
+            <div class="form-item">
+                <label for="name">name</label>
+                <input class="form-control" type="text" id="name" formControlName="name">
+                <div class="alert alert-danger" *ngIf="signinForm.get('name')?.errors && signinForm.get('name')?.touched">
+                    <p *ngIf="signinForm.get('name')?.getError('required')">
+                        Name Is Required
+                    </p>
+                    <p *ngIf="signinForm.get('name')?.getError('minlength')">
+                        Name MinLength 3
+                    </p>
+                    <p *ngIf="signinForm.get('name')?.getError('maxlength')">
+                        Name MaxLength 10
+                    </p>
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="email">email</label>
+                <input class="form-control" type="text" id="email" formControlName="email">
+                <div class="alert alert-danger" *ngIf="signinForm.get('email')?.errors && signinForm.get('email')?.touched">
+                    <p *ngIf="signinForm.get('email')?.getError('required')">
+                        email Is Required
+                    </p>
+                    <p *ngIf="signinForm.get('email')?.getError('email')">
+                        email Is Not valid
+                    </p>
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="password">password</label>
+                <input class="form-control" type="password" id="password" formControlName="password">
+                <div class="alert alert-danger" *ngIf="signinForm.get('password')?.errors && signinForm.get('password')?.touched">
+                    <p *ngIf="signinForm.get('password')?.getError('required')">
+                        password Is Required
+                    </p>
+                    <p *ngIf="signinForm.get('password')?.getError('pattern')">
+                        password MinLength 6
+                    </p>
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="rePassword">rePassword</label>
+                <input class="form-control" type="password" id="rePassword" formControlName="rePassword">
+                <div class="alert alert-danger" *ngIf="signinForm.get('rePassword')?.errors && signinForm.get('rePassword')?.touched">
+                    <p *ngIf="signinForm.get('rePassword')?.getError('required')">
+                        RePassword Is Required
+                    </p>
+                    <p *ngIf="signinForm.get('rePassword')?.getError('mismatch')">
+                        RePassword Mis Match 
+                    </p>
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="phone">phone</label>
+                <input class="form-control" type="text" id="phone" formControlName="phone">
+                <div class="alert alert-danger" *ngIf="signinForm.get('phone')?.errors && signinForm.get('phone')?.touched">
+                    <p *ngIf="signinForm.get('phone')?.getError('required')">
+                        phone Is Required
+                    </p>
+                    <p *ngIf="signinForm.get('phone')?.getError('pattern')">
+                        phone is Not valid
+                    </p>
+                </div>
+            </div>
+            <button [disabled]="signinForm.invalid" type="submit" class="btn main-btn mt-3">
+                SignIn <span *ngIf="isLoading" > <i class="fas fa-spin fa-spinner"></i> </span>
+            </button>
+
+            <p *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</p>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+<section class="my-4">
+    <h2>
+        please enter your verification code
+    </h2>
+    <form [formGroup]="verifyCode" (ngSubmit)="verify()">
+        <div class="inputbox mt-5">
+            <input required="required" type="text" formControlName="resetCode">
+            <span>code</span>
+            <i></i>
+        </div>
+        <div class="alert alert-danger" *ngIf="verifyCode.get('resetCode')?.errors && verifyCode.get('resetCode')?.touched">
+            <p *ngIf="verifyCode.get('resetCode')?.getError('required')">
+                resetCode Is Required
+            </p>
+        </div>
+        <p *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</p>
+        <button class="btn btn-outline-success mt-3">
+            Verify <span *ngIf="isLoading" > <i class="fas fa-spin fa-spinner"></i> </span>
+        </button>
+    </form>
+    
+</section>
