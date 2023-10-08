@@ -51,6 +51,7 @@ export class ProductDetaliesComponent implements OnInit {
     this._CartService.addToCart(id).subscribe({
       next:(response)=>{
         this._ToastrService.success(response.message)
+        this._CartService.cartNumber.next(response.numOfCartItems)
         console.log(response);
       },
       error:(err)=>{
